@@ -1,0 +1,29 @@
+# WordPress core files (managed by Docker)
+wp-admin/
+wp-includes/
+wp-*.php
+!wp-content/
+xmlrpc.php
+license.txt
+readme.html
+
+# Uploads
+wp-content/uploads/
+
+# Plugins (manage separately if needed)
+wp-content/plugins/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker volumes
+db_data/
+wordpress_data/
+
+# Environment
+.env

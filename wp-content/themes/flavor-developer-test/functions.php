@@ -284,4 +284,4 @@ function fdt_localize_script() {
         'nonce'   => wp_create_nonce( 'fdt_lead_form' ),
     ) );
 }
-add_action( 'wp_enqueue_scripts', 'fdt_localize_script' );
+add_action( 'wp_enqueue_scripts', 'fdt_localize_script', 21 );

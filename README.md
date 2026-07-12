@@ -1,13 +1,13 @@
-# WordPress Landing Page - บริการล้างแอร์บ้านแบบ Premium
+# WordPress Landing Page - Premium AC Cleaning Service
 
-แบบทดสอบตำแหน่ง WordPress Developer - สร้างหน้า Landing Page สำหรับบริการ "ล้างแอร์บ้านแบบ Premium โดยช่างมืออาชีพ"
+A coding assessment: a landing page for a "Premium home AC cleaning by professional technicians" service, built with a custom WordPress theme (no page builder).
 
 ## Tech Stack
 
-- **WordPress 6.7** + Custom Theme (ไม่ใช้ Page Builder)
-- **Mobile-First CSS** - System fonts, CSS Custom Properties
-- **Vanilla JavaScript** - ไม่ใช้ jQuery, ~4KB
-- **Docker Compose** - WordPress + MySQL พร้อมใช้งาน
+- **WordPress 6.9** + custom theme (no page builder)
+- **Mobile-first CSS** — system fonts, CSS custom properties
+- **Vanilla JavaScript** — no jQuery, ~4KB
+- **Docker Compose** — WordPress + MySQL, ready to run
 
 ## Quick Start
 
@@ -19,9 +19,9 @@ docker compose up -d
 open http://localhost:8080
 ```
 
-1. ติดตั้ง WordPress ตามปกติ
-2. ไปที่ **Appearance → Themes → Activate "Flavor Developer Test"**
-3. ไปที่ **Customize → Landing Page Settings** → ตั้งค่า LINE URL, เบอร์โทร, GTM ID
+1. Complete the standard WordPress install
+2. Go to **Appearance → Themes → activate "Flavor Developer Test - Landing Page"**
+3. Go to **Customize → Landing Page Settings** to set the LINE URL, phone number, and GTM ID
 
 ## Project Structure
 
@@ -39,48 +39,46 @@ wp-content/themes/flavor-developer-test/
 
 ## Features
 
-### Assets ตามบรีฟ
-
 | Requirement | Implementation |
 |---|---|
-| **Trust Signals** | รีวิว 5 ดาว x3, trust badges, stats counter (15,000+ หลัง, 4.9 คะแนน) |
-| **Service Highlights** | น้ำยาฆ่าเชื้อ, ช่างผ่านตรวจประวัติ, ตรงต่อเวลา |
-| **Clear CTA** | ปุ่ม "จองคิวล้างแอร์วันนี้" + "แอดไลน์เช็คราคา" + Sticky CTA มือถือ |
-| **Lead Form / Contact** | ฟอร์มชื่อ-เบอร์โทร (AJAX) + ปุ่ม LINE OA + ปุ่มโทรตรง |
+| **Trust Signals** | 3x five-star reviews, trust badges, stats counter (15,000+ homes served, 4.9 rating) |
+| **Service Highlights** | Sanitizing solution, background-checked technicians, punctuality |
+| **Clear CTA** | "Book AC cleaning today" + "Add LINE for pricing" buttons + sticky mobile CTA |
+| **Lead Form / Contact** | Name/phone AJAX form + LINE OA button + direct call button |
 
 ### Technical Requirements
 
 | Requirement | Solution |
 |---|---|
-| **Mobile-First** | CSS mobile-first, sticky CTA, touch-friendly 48px+ tap targets |
+| **Mobile-First** | Mobile-first CSS, sticky CTA, touch-friendly 48px+ tap targets |
 | **PageSpeed 85+** | No jQuery, system fonts, inline SVG, removed emoji/block-library/wp_head bloat, deferred scripts |
-| **Tracking Setup** | GTM via Customizer, `dataLayer.push()` ทุก CTA click + form submit |
+| **Tracking Setup** | GTM via Customizer, `dataLayer.push()` on every CTA click and form submit |
 
-### เพิ่มเติม
+### Additional Details
 
-- **Lead CPT** - ข้อมูลลูกค้าเก็บใน WP Admin เมนู "Leads"
-- **AJAX Form** - ส่งฟอร์มไม่ต้อง refresh หน้า พร้อม validation เบอร์โทรไทย
-- **FAQ** - ใช้ native `<details>` element (accessible, no JS)
-- **Pricing Section** - ราคาโปรโมชั่น 3 แพ็กเกจ พร้อม "ยอดนิยม" badge
+- **Lead CPT** — customer submissions stored under a "Leads" menu in WP Admin
+- **AJAX Form** — submits without a page refresh, with Thai phone number validation
+- **FAQ** — native `<details>` element (accessible, no JS)
+- **Pricing Section** — 3 promotional packages with a "Most Popular" badge
 
-## Layout Strategy (Work Report)
+## Layout Strategy
 
-วาง Layout ตาม Sales Funnel เพื่อปิดการขาย:
+Sections are ordered along the sales funnel to drive conversions:
 
-1. **Hero** → Hook ด้วย Key Message + CTA ทันที (คนพร้อมซื้อกดได้เลย)
-2. **Pain Points** → กระตุ้นปัญหาที่ลูกค้าเจอ (สร้าง urgency)
-3. **Highlights** → ตอบ "ทำไมต้องเลือกเรา" (build value)
-4. **How It Works** → 3 ขั้นตอนง่ายๆ (lower barrier)
-5. **Pricing** → ราคาโปร + ขีดฆ่าราคาเดิม (create urgency)
-6. **Reviews + Trust** → Social proof ก่อนฟอร์ม (overcome objections)
-7. **Booking Form** → จุด conversion หลัก (capture lead)
-8. **FAQ** → ตอบข้อสงสัยสุดท้าย (reduce friction)
-9. **Sticky CTA** → ติดหน้าจอมือถือตลอด (never miss conversion)
+1. **Hero** — key message + immediate CTA for ready-to-buy visitors
+2. **Pain Points** — surfaces the problems the service solves (creates urgency)
+3. **Highlights** — answers "why choose us" (builds value)
+4. **How It Works** — 3 simple steps (lowers the barrier to entry)
+5. **Pricing** — promotional pricing with the original price struck through (creates urgency)
+6. **Reviews + Trust** — social proof before the form (overcomes objections)
+7. **Booking Form** — the main conversion point (captures the lead)
+8. **FAQ** — answers remaining questions (reduces friction)
+9. **Sticky CTA** — stays on screen on mobile (never misses a conversion)
 
 ## Customizer Settings
 
 | Setting | Description |
 |---|---|
-| LINE OA URL | ลิงก์ LINE Official Account |
-| Phone Number | เบอร์โทรศัพท์ติดต่อ |
+| LINE OA URL | Link to the LINE Official Account |
+| Phone Number | Contact phone number |
 | GTM Container ID | Google Tag Manager ID (e.g. GTM-XXXXXXX) |
